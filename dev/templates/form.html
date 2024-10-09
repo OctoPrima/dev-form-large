@@ -1,0 +1,40 @@
+<form class="form-verification">
+    <div class="form-verification-head">
+        <h2 class="form-verification-head-title">верифікація <span class="form-verification-status form-verification-status__dont">верифікацію не пройдено</span></h2>
+        <div class="form-description">Пройдіть верифікацію особи та отримайте можливість здійснювати обмін фіатних валют та доступ до реферальної програми</div>
+    </div>
+
+    <fieldset class="form-verification__country">
+        <h5>країна знаходження</h5>
+        <div>
+            <select name="country">
+                <option value="country-option" data-display="країна">країна</option>
+                <option value="ua">Україна</option>
+                <option value="pl">Польща</option>
+                <option value="ch">Чехія</option>
+            </select>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-verification__info">
+        <h5>особиста інформація</h5>
+            <input type="text" name="firstname" placeholder="ім’я">
+            <input type="text" name="lastname" placeholder="прізвище">
+            <input type="text" name="fathername" placeholder="по батькові">
+            <input type="tel" placeholder="телефон">
+
+            <input type="text" data-calendar placeholder="дата народження">
+            
+        <div class="control-box">
+            <h6 class="control-box__title">стать</h6>
+            <div class="radio-box">
+                <input type="radio" id="female" name="gender">
+                <Label for="female">жіноча</Label>
+            </div>
+            <div class="radio-box">
+                <input type="radio" id="male" name="gender">
+                <Label for="male">чоловіча</Label>
+            </div>
+        </div>
+    </fieldset>
+</form>

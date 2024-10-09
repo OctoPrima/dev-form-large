@@ -1,0 +1,299 @@
+.form-verification {
+    max-width: 950px;
+    width: 100%;
+    margin: 0 auto;
+
+    &-head {
+        max-width: 705px;
+        width: 100%;
+        margin-bottom: 60px;
+
+        &-title {
+            line-height: 1.3;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 32px;
+        }
+    }
+    
+    &-status {
+        display: inline-block;
+        line-height: 1.25;
+        border: 1px solid $border;
+        border-radius: 3px;
+        padding: 6px 10px;
+        font-size: 16px;
+        font-weight: 400;
+        margin-left: 30px;
+    
+        &__under {
+            color: $verification-status-button;
+        }
+    
+        &__in {
+            color: $accent;
+        }
+    
+        &__dont {
+            color: $errors;
+        }
+    }
+
+    &__info,
+    &__country {
+        & h5 {
+            text-transform: lowercase;
+            color: $strokes;
+            line-height: 1.7;
+            border-bottom: 1px solid $strokes;
+            margin-bottom: 10px;
+            padding-bottom: 13px;
+            font-weight: 400;
+        }
+    }
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+input {
+    line-height: 1.13;
+    color: $title;
+    background: $system;
+    border: 1px solid $strokes;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 30px;
+    max-width: 100%;
+    width: 100%;
+
+    &::placeholder {
+        color: $title;
+        transition: .3s;
+        font-family: $font-primary;;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+        border-color: $body-text;
+    }
+
+    &:focus::placeholder {
+        font-size: 0;
+        color: $body-text;
+        transition: .3s;
+    }
+}
+
+
+.form-description {
+    line-height: 1.7;
+    font-size: 20px;
+}
+
+//* nice-select *//
+
+.nice-select {
+    @extend input;
+    position: relative;
+    height: auto;
+
+    /*max-width: 100%;
+    width: 100%;
+    line-height: 1.13;
+    color: $title;
+    background: $system;
+    border: 1px solid $strokes;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 30px;*/
+
+    [data-display] {
+        display: none;
+    }    
+
+    &:active,
+    &:focus {
+        border-color: $body-text;
+    }
+
+    &.open {
+        border-color: $body-text;
+
+        & .list {
+            max-width: 100%;
+            width: 100%;
+            background: $system;
+            border: 1px solid $strokes;
+            border-radius: 8px;
+        }
+
+        &:after {
+            transform: rotate(-180deg) translate( 5px, 50%);
+            transition: .5s;
+        }
+    }
+
+    & .option {
+        line-height: 1.13;
+        color: $title;
+        font-size: 20px;
+        padding: 16px 0;
+        margin: 0 25px;
+        border-bottom: 1px solid $strokes;
+        &:hover,
+        &.focus,
+        &.selected.focus {
+            background-color: transparent;
+            color: $accent;
+        }
+        &:hover {
+            color: $title;
+        }
+    }
+
+    & li:last-child {
+        border-bottom: none;
+    }
+
+    &::after {
+        border: none;
+        content: "";
+        height: 14px;
+        width: 14px;
+        top: 50%;
+        right: 39px;
+        position: absolute;
+        background: url(assets/img/arrow.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transform: rotate(0);
+        transition: .5s;
+    }
+}
+
+//* radio *//
+
+.control-box {
+    
+    &__title {
+        font-size: 20px;
+        line-height: 1.7;
+        color: $body-text;
+        margin-bottom: 16px;
+        margin-top: 10px;
+    }
+
+    & [type="radio"] {
+        display: none;
+    
+        & + label {
+            position: relative;
+            padding-left: 42px;
+            cursor: pointer;
+        
+            &:before {
+                content: "";
+                top: 0;
+                left: 0;
+                position: absolute;
+                height: 23.8px;
+                width: 23.8px;
+                border: 1px solid $strokes;
+                background-color: $system;
+                border-radius: 50%;
+                transition: .3s;
+                background-position: center;
+            }
+            
+            &:hover:before {
+                background: $radio-hover-bg;
+                border-color: $accent;
+                transition: .3s;
+                background-position: center;           
+            }
+        }
+    
+        &:checked + label::before {
+            background: url(assets/img/check-circle.svg) $radio-hover-bg;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-color: $accent;
+            transition: .3s;
+        }
+    } 
+}
+
+.radio-box {
+    margin-right: 50px;
+    font-size: 20px;
+    line-height: 1.25;
+    color: $title;
+    display: inline-block;
+}
+
+//* date *//
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.ui-datepicker {
+    font-size: .9em;
+    border-collapse: collapse;
+    margin: 0 0 .4em;
+    background-color: $system;
+    box-shadow: 0 0 0 1px $strokes;;
+    border-radius: 8px;
+    
+    & .ui-datepicker-title {
+        color: $title;
+    }
+
+    & td a {
+        color: $title;
+    }
+
+    & th {
+        font-weight: 400;
+        color: $body-text;
+    }
+
+    & .ui-datepicker-prev, 
+    & .ui-datepicker-next {
+        content: "";
+    }
+
+    & .ui-datepicker-prev {
+        background: url(assets/img/left-icon.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    & .ui-datepicker-next {
+        background: url(assets/img/right-icon.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.calendar-cotainer {
+    position: relative;
+    img {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        right: 30px;
+        width: 18px;
+        height: 19px;
+    }
+}
