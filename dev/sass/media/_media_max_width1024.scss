@@ -1,4 +1,16 @@
 @media screen and (max-width: 1024px) {
+    .input-row {
+        flex-direction: column;
+    }
+
+    .control-box-list .form-row.form-row {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .control-box-list .radio-box__large {
+        max-width: 47%;
+    }
 }
 
 

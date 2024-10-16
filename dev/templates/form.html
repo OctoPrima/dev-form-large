@@ -37,4 +37,57 @@
             </div>
         </div>
     </fieldset>
+
+    <fieldset class="form-verification__adress">
+        <h5>адреса проживання</h5>
+        <input type="text" name="city" placeholder="місто">
+        <input type="text" name="adress" placeholder="вулиця">
+        <div class="input-row">
+            <input type="number" name="hous" placeholder="будинок">
+            <input type="number" name="flat" placeholder="квартира">
+            <input type="number" name="index" placeholder="індекс">
+        </div>
+    </fieldset>
+
+    <fieldset class="form-verification__document">
+        <div class="control-box">
+            <h5 class="control-box__title">підтвердження особистості</h5>
+            <div class="control-box-list">
+                <h6>тип документу</h6>
+                    <div class="form-row  control-box__large">
+                        <div class="radio-box radio-box__large">
+                            <input type="radio" id="passport" name="document">
+                            <Label for="passport">паспорт</Label>
+                        </div>
+                        <div class="radio-box radio-box__large">
+                            <input type="radio" id="foreign-passport" name="document">
+                            <Label for="foreign-passport">закордонний паспорт</Label>
+                        </div>
+                        <div class="radio-box radio-box__large">
+                            <input type="radio" id="ID-card" name="document">
+                            <Label for="ID-card">ID-картка</Label>
+                        </div>
+                        <div class="radio-box radio-box__large">
+                            <input type="radio" id="drivers-license" name="document">
+                            <Label for="drivers-license">посвідчення водія</Label>
+                        </div>
+                    </div>
+                <div class="control-box__dropzone">
+                    <h6>завантажте документ</h6>
+                    @@include('drope-zone.html')
+                </div>
+            </div>
+            <div class="radio-box toggle-checbox">
+                <input type="checkbox" id="validity-period" name="validity-period-doc">
+                <label for="validity-period" class="validity-period-chek">
+                    <span>немає терміну дії</span>
+                    <span>за умови відсутності терміну дії документу</span>
+                </label>
+            </div>
+
+            <input type="text" data-calendar placeholder="термін дії документу">
+
+            <button type="submit">продовжити</button>
+        </div>
+    </fieldset>
 </form>

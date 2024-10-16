@@ -1,6 +1,11 @@
 * {
     box-sizing: border-box;
     letter-spacing: -.1px;
+
+    &::selection {
+        color: $accent-secondary;
+        background-color: $accent;
+    }
 }
 
 body {
@@ -73,3 +78,23 @@ button {
     cursor: pointer;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
